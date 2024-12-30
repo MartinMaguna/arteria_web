@@ -28,7 +28,9 @@ function App() {
       <p className="read-the-docs">
         Probando cambios
       </p>
-      
+      <footer>
+        <h2>Arteria</h2>
+      </footer>
     </>
   )
 }
