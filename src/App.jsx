@@ -1,14 +1,13 @@
-import { useState } from 'react'
 import './App.css'
+import{Obra} from "./Obra"
+
 
 function App() {
-  const [count, setCount] = useState(0)
-
-  return (
-    <>     
-      <h1>Arteria</h1>
-    </>
-  )
+  return(
+  <div>
+    <Obra/>
+  </div> 
+)
 }
 
 export default App
