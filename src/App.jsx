@@ -1,13 +1,16 @@
-import './App.css'
-import{Obra} from "./Obra"
+//import{Obra} from "./Componentes/Obra/Obra"
+//import{CampoEstrellas} from "./Componentes/Obra/CampoEstrellas"
+import{ObraDos} from "./Componentes/ObraDos/ObraDos"
 
 
 function App() {
   return(
   <div>
-    <Obra/>
+    <ObraDos/>
   </div> 
 )
 }
+
+
 
 export default App
