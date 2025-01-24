@@ -9,6 +9,7 @@ export const ObraDos = () => {
     const sketch = (p) => {
       let stars = [];
 
+      
       // Genera una estrella
       const createStar = (x, y) => {
         return {
