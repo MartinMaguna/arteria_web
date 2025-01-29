@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import poesiaData from "../Obra/poesia.json";
+import poesiaData from "./Componentes/GeneradorPoema/poesia.json";
 
 const GeneradorPoema = () => {
   const [poema, setPoema] = useState([]);
@@ -12,7 +12,7 @@ const GeneradorPoema = () => {
     setPoema(versosAleatorios);
   };
 
-  return (
+  return (  
     <div style={{ fontFamily: "serif", whiteSpace: "pre-wrap", lineHeight: "1.5" }}>
       <h1>Poesía Generativa</h1>
       <button onClick={generarPoemaAleatorio}>Generar Poema</button>

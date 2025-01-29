@@ -1,52 +1,74 @@
-import { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import p5 from 'p5';
 
-const LogoGenerativo = () => {
+const LogoGenerativo = ( { speed = (12) } ) => {
+  const canvasRef = useRef(null);
+
   useEffect(() => {
     const sketch = (p) => {
-      let points = [];
-
       p.setup = () => {
-        // Crear el canvas en el contenedor del logo
-        const canvas = p.createCanvas(150, 150); 
-        canvas.parent('logo-container'); // Asocia el canvas al contenedor
-        p.noFill();
-        p.stroke(255);
-        p.strokeWeight(2);
+        const canvas = p.createCanvas(200, 200); // Tamaño del logo
+        canvas.parent(canvasRef.current); // Asignar el canvas al contenedor
+        p.frameRate(speed);
       };
 
       p.draw = () => {
-        p.background(0);
+        p.background(255); // Fondo blanco
+        p.noFill();
+        p.stroke(0); // Color del trazo
+        p.strokeWeight(2); // Grosor del trazo
 
-        // Dibuja una espiral generativa que cambia con el mouse
-        let angle = p.frameCount * 0.05;
-        let x = p.width / 2 + p.cos(angle) * 50;
-        let y = p.height / 2 + p.sin(angle) * 50;
-
-        points.push(p.createVector(x, y));
-
-        if (points.length > 100) {
-          points.shift(); // Elimina los puntos más viejos para que la espiral sea suave
+        p.beginShape();
+        for (let i = 0; i < 6; i++) {
+          p.vertex(p.random(p.width), p.random(p.height));
         }
+        p.endShape(p.CLOSE);
 
-        for (let i = 0; i < points.length; i++) {
-          p.point(points[i].x, points[i].y);
+        p.textSize(32);
+        p.textAlign(p.CENTER, p.CENTER);
+        p.text("ARTERIA", p.width / 2, p.height / 2);
+
+        p.fill(p.random(255), p.random(255), p.random(255));
+        p.stroke(p.random(255), p.random(255), p.random(255));
+
+        // Generar formas geométricas aleatorias
+        const shapes = p.random(['circles', 'triangles', 'lines']);
+        if (shapes === 'circles') {
+          for (let i = 0; i < 5; i++) {
+            const x = p.random(p.width);
+            const y = p.random(p.height);
+            const size = p.random(20, 100);
+            p.ellipse(x, y, size, size);
+          }
+        } else if (shapes === 'triangles') {
+          for (let i = 0; i < 3; i++) {
+            const x1 = p.random(p.width);
+            const y1 = p.random(p.height);
+            const x2 = p.random(p.width);
+            const y2 = p.random(p.height);
+            const x3 = p.random(p.width);
+            const y3 = p.random(p.height);
+            p.triangle(x1, y1, x2, y2, x3, y3);
+          }
+        } else if (shapes === 'lines') {
+          for (let i = 0; i < 10; i++) {
+            const x1 = p.random(p.width);
+            const y1 = p.random(p.height);
+            const x2 = p.random(p.width);
+            const y2 = p.random(p.height);
+            p.line(x1, y1, x2, y2);
+          }
         }
-
-        // Reacciona al movimiento del mouse, alterando la espiral
-        let freq = p.map(p.mouseX, 0, p.width, 0.05, 0.1);
-        p.strokeWeight(p.map(p.mouseY, 0, p.height, 1, 4));
       };
     };
 
-    const canvas = new p5(sketch);
-
+    const p5Instance = new p5(sketch);
     return () => {
-      canvas.remove();
+      p5Instance.remove(); // Limpiar el canvas al desmontar el componente
     };
   }, []);
 
-  return null; // No se necesita renderizar nada aquí
+  return <div ref={canvasRef}></div>; // Contenedor para el canvas
 };
 
 export default LogoGenerativo;
