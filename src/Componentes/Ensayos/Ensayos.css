@@ -1,78 +1,78 @@
+/* Ensayos.css */
+
 .ensayos-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 2rem;
-  }
-  
-  .titulo-seccion {
-    text-align: center;
-    color: #2c3e50;
-    margin-bottom: 3rem;
-  }
-  
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  background-color: #fff;
+  color: #333;
+  padding: 1rem;
+}
+
+.titulo-seccion {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #000;
+}
+
+.grid-ensayos {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+.card-ensayo {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #f5f5f5;
+  transition: transform 0.3s;
+}
+
+.card-ensayo:hover {
+  transform: translateY(-5px);
+}
+
+.card-contenido {
+  padding: 1rem;
+}
+
+.card-titulo {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #000;
+}
+
+.card-extracto {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  color: #555;
+}
+
+.boton-leer {
+  text-decoration: none;
+  font-weight: bold;
+  color: #fff;
+  background-color: #000;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.boton-leer:hover {
+  background-color: #333;
+}
+
+/* Sección de imagen de la tarjeta (placeholder) */
+.card-imagen {
+  background-color: #ccc;
+  height: 150px;
+}
+
+/* Media query para pantallas mayores */
+@media(min-width: 768px) {
   .grid-ensayos {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 2rem;
-    padding: 1rem;
+    grid-template-columns: repeat(2, 1fr);
   }
-  
-  .card-ensayo {
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    transition: transform 0.3s ease;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .card-ensayo:hover {
-    transform: translateY(-5px);
-  }
-  
-  .card-contenido {
-    padding: 1.5rem;
-    flex-grow: 1;
-  }
-  
-  .card-titulo {
-    color: #2c3e50;
-    margin-bottom: 1rem;
-    font-size: 1.25rem;
-  }
-  
-  .card-extracto {
-    color: #666;
-    font-size: 0.9rem;
-    line-height: 1.6;
-    margin-bottom: 1.5rem;
-  }
-  
-  .boton-leer {
-    display: inline-block;
-    background-color: #3498db;
-    color: white;
-    padding: 0.5rem 1rem;
-    border-radius: 5px;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
-  }
-  
-  .boton-leer:hover {
-    background-color: #2980b9;
-  }
-  
-  .card-imagen {
-    height: 200px;
-    background-color: #ecf0f1;
-    background-image: url('ruta-a-imagen-placeholder.jpg');
-    background-size: cover;
-    background-position: center;
-  }
-  
-  @media (max-width: 768px) {
-    .grid-ensayos {
-      grid-template-columns: 1fr;
-    }
-  }
+}

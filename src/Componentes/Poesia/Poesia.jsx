@@ -10,24 +10,20 @@ const Poesia = () => {
       titulo: "Máquina de Amor",
       descripcion: "Generativo interactivo basado en algoritmos sentimentales",
       ruta: "/poesia/maquina-amor",
-      tipo: "interactivo",
-      background: "#ff6b6b"
-    },
+      tipo: "interactivo"},
     {
       id: 2,
       titulo: "Ecos del Ciberespacio",
       descripcion: "Composición poética con visualización en tiempo real",
       ruta: "/poesia/ecos-ciberespacio",
-      tipo: "visual",
-      background: "#4ecdc4"
+      tipo: "visual"
     },
     {
       id: 3,
       titulo: "Algoritmos del Suspiro",
       descripcion: "Poema generativo con entrada de voz del usuario",
       ruta: "/poesia/algoritmos-suspiro",
-      tipo: "generativo",
-      background: "#ffe66d"
+      tipo: "generativo"
     },
   ];
 

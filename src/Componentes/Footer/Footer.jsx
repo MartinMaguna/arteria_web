@@ -6,7 +6,7 @@ export const Footer = () => {
     <footer className="footer">
       <div className="footer-content">
         <p className="footer-text">
-          © {new Date().getFullYear()} Martín. Todos los derechos reservados.
+          © {new Date().getFullYear()} ARTERIA
         </p>
       </div>
     </footer>
