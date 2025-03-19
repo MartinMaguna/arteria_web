@@ -1,31 +1,27 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Ensayos.css'; // Archivo de estilos para el componente
-//import { collection } from "firebase/firestore";
-//import { db } from "./firebase/config";
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "../../firebase/config";
 
 const Ensayos = () => {
-    // Datos de ejemplo para los ensayos
-    const ensayos = [
-        {
-            id: 1,
-            titulo: "La poesía en la era digital",
-            extracto: "Explorando el impacto de la tecnología en la creación poética...",
-            ruta: "/ensayos/1"
-        },
-        {
-            id: 2,
-            titulo: "Narrativas no lineales",
-            extracto: "Análisis de estructuras literarias contemporáneas...",
-            ruta: "/ensayos/2"
-        },
-        {
-            id: 3,
-            titulo: "Literatura y inteligencia artificial",
-            extracto: "El rol de la IA en la creación y análisis literario...",
-            ruta: "/ensayos/3"
-        },
-    ];
+    const [ensayos, setEnsayos] = useState([]);
+
+    useEffect(() => {
+        const ensayosRef = collection(db, "ensayos");
+        getDocs(ensayosRef)
+            .then((resp) => {
+                const ensayosData = resp.docs.map((doc) => ({
+                    ...doc.data(),
+                    id: doc.id,
+                }));
+                console.log("Ensayos obtenidos:", ensayosData); // Agrega este log
+                setEnsayos(ensayosData);
+            })
+            .catch((error) => {
+                console.error("Error al obtener los documentos: ", error);
+            });
+    }, []);
 
     return (
         <div className="ensayos-container">
@@ -48,14 +44,7 @@ const Ensayos = () => {
                 ))}
             </div>
         </div>
-    );   
-
+    );
 };
 
-// useEffect{ ()=> {
-//     const ensayosRef = collection (db, "ensayos");
-//   }, [categoria]}
- 
-
-
-export default Ensayos;
+export default Ensayos; 
