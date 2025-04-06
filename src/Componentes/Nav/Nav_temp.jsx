@@ -12,7 +12,6 @@ export const Nav = () => {
         <ul>
           <li><Link to="/Ensayos" >ENSAYOS</Link></li>
           <li><Link to="/Poesia">POESÍA</Link></li>
-          <li><Link to="/Posdata">POSDATA</Link></li>
           <li><Link to="/About">ABOUT</Link></li>
         </ul>
       </nav>
