@@ -7,21 +7,21 @@ const Poesia = () => {
   const obrasPoeticas = [
     {
       id: 1,
-      titulo: "Máquina de Amor",
-      descripcion: "Generativo interactivo basado en algoritmos sentimentales",
+      titulo: "Poesía sin tierra",
+      descripcion: "Visita algorítmica a la poesía del Movimiento Sin Tierra de Brasil",
       ruta: "/poesia/maquina-amor",
       tipo: "interactivo"},
     {
       id: 2,
-      titulo: "Ecos del Ciberespacio",
-      descripcion: "Composición poética con visualización en tiempo real",
+      titulo: "Criptograma",
+      descripcion: "Activación de las proclamas de la Marcha por Accesibilidad",
       ruta: "/poesia/ecos-ciberespacio",
       tipo: "visual"
     },
     {
       id: 3,
-      titulo: "Algoritmos del Suspiro",
-      descripcion: "Poema generativo con entrada de voz del usuario",
+      titulo: "Poéticas Transfronterizas",
+      descripcion: "Poesía peregrina, migrante, desde Latinoamerica y el Caribe",
       ruta: "/poesia/algoritmos-suspiro",
       tipo: "generativo"
     },

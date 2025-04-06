@@ -12,7 +12,7 @@ const About = () => {
           <h1>Arteria</h1>
           <h2>Laboratorio de Arte Digital-Electrónico</h2>
           <p className="tagline">
-            Donde los bytes encuentran la belleza y los datos se transforman en poesía
+            Claim
           </p>
         </div>
         <div className="hero-visual">
