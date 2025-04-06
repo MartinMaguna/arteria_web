@@ -19,8 +19,6 @@ function App() {
             <Route path="/ensayos/:id" element={<EnsayoIndividual />} />
             <Route path="/Poesia" element={<Poesia />} />
             <Route path="/poesia/:poemId" element={<PoemaDigital />} />
-            <Route path="/Posdata" element={<Posdata />} />
-            <Route path="/posdata/:artworkId" element={<DataArtworkViewer />} />
             <Route path="/About" element={<About />} />
           </Routes>
         </div>
