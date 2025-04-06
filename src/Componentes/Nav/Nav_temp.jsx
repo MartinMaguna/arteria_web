@@ -6,7 +6,7 @@ export const Nav = () => {
   return (
     <header>
       <div>
-        <h1>ARTERIA</h1>
+      <Link to="/" ><h1>ARTERIA</h1></Link>
       </div>
       <nav>
         <ul>

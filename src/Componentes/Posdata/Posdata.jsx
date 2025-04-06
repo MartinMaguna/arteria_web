@@ -42,7 +42,6 @@ const Posdata = () => {
     <div className="posdata-container">
       <header className="posdata-header">
         <h1>Arte Basado en Datos</h1>
-        <p>Obras creadas a partir de conjuntos de datos complejos</p>
       </header>
       
       <div className="data-art-grid">
@@ -78,14 +77,6 @@ const Posdata = () => {
                 </div>
               </div>
             </div>
-            
-            <Link 
-              to={artwork.route} 
-              className="explore-button"
-              state={{ artworkData: artwork }}
-            >
-              Explorar Dataset →
-            </Link>
           </div>
         ))}
       </div>
