@@ -88,16 +88,6 @@ const About = () => {
             "En la era del algoritmo, el arte debe ser un sistema vivo, 
             una red de significados que se reconfigura con cada interacción"
           </blockquote>
-          <div className="tech-stack">
-            <span>Herramientas principales:</span>
-            <div className="tech-icons">
-              <span>React</span>
-              <span>Three.js</span>
-              <span>D3.js</span>
-              <span>Python</span>
-              <span>ML</span>
-            </div>
-          </div>
         </div>
       </section>
     </div>
