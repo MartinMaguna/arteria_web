@@ -46,7 +46,6 @@ const Poesia = () => {
                 <p className="card-descripcion">{obra.descripcion}</p>
                 
                 <div className="card-metadata">
-                  <span className="tipo-obra">{obra.tipo}</span>
                   <Link 
                     to={obra.ruta} 
                     className="boton-experimentar"
