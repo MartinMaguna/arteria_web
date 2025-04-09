@@ -9,21 +9,18 @@ const Poesia = () => {
       id: 1,
       titulo: "Poesía sin tierra",
       descripcion: "Visita algorítmica a la poesía del Movimiento Sin Tierra de Brasil",
-      ruta: "/poesia/maquina-amor",
-      tipo: "interactivo"},
+      ruta: "/poesia/poesia-sin-tierra"},
     {
       id: 2,
       titulo: "Criptograma",
       descripcion: "Activación de las proclamas de la Marcha por Accesibilidad",
-      ruta: "/poesia/ecos-ciberespacio",
-      tipo: "visual"
+      ruta: "/poesia/criptograma"
     },
     {
       id: 3,
       titulo: "Poéticas Transfronterizas",
       descripcion: "Poesía peregrina, migrante, desde Latinoamerica y el Caribe",
-      ruta: "/poesia/algoritmos-suspiro",
-      tipo: "generativo"
+      ruta: "/poesia/poeticas-transfronterizas"
     },
   ];
 
